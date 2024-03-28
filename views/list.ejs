@@ -1,0 +1,33 @@
+<%- include("header") -%> 
+    <div class="box" id="heading">
+        <h1><%= listTitle %> </h1>
+        <%if(listTitle==="Work List"){%>
+        <html style="background-image: -webkit-linear-gradient(65deg, #636ddc 50%, #E4E9FD 50%)"></html>
+        <style >
+        #heading  {background-color: #636ddc;}
+        input:checked+p{text-decoration-color: #636ddc;}
+        button{background-color: #636ddc;}
+        </style>
+        <% }%>
+    </div>
+    <div class="box">
+        
+    
+            <%for(var i=0;i<newListItems.length;i++){%>
+                <div class="item">
+                    <input type="checkbox" >
+                    
+                    <p><%= newListItems[i] %> </p>
+                </div>
+                <% }%>
+            
+         
+<form action="/" method="post" class="item">
+    <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+    <button type="submit" name="list" value=<%=listTitle%> >+</button>
+    </form>
+    </div>
+    
+    <%- include("footer") -%> 
+
+
